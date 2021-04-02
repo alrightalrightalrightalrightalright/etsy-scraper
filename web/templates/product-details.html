@@ -1,0 +1,277 @@
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <title>Landing Page - Start Bootstrap Theme</title>
+  
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  
+    <!-- Custom fonts for this template -->
+    <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  
+    <!-- Custom styles for this template -->
+    <link href= "{{url_for('static', filename='css/landing-page.min.css')}}" rel="stylesheet">
+    
+    <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+  </head>
+  
+  <body>
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products">Products</a>
+        </li>      
+        <li class="nav-item">
+          <a class="nav-link" href="/scrape">Scrape a Product</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Find a Product</button>
+      </form>
+    </div>
+  </nav>
+  
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+  <div class="container">
+    <div class="row">
+        <!--Start Item Area-->
+      <div class="col-md-12 ">
+        <!--Start Item summary area-->  
+        <div class="row" id="gradient">
+                <div class="col-md-4">
+                    <img src="{{product.link}}" class="img-fluid">
+                </div>
+                <div class="col-md-8" id="overview">
+                    <div class="row">
+                        <div class="col-xs-10 col-md-12">
+                            <h2> {{product.title}}</h2>
+                            <a href="{{product.link}}"> {{product.link}} </a>
+                        </div>
+                        <!-- keep these for further designs
+                        <div class="col-xs-6 col-md-6">
+                            <ul class="pb-product-details-ul">
+                                <li><span class="fa fa-calendar">&nbsp;Released 2016, March</span></li>
+                                <li><span class="fa fa-phone">&nbsp;157g, 7.7mm thickness</span></li>
+                                <li><span class="fa fa-bluetooth-b">&nbsp;Android OS, v6.0, up to 7.0</span></li>
+                                <li><span class="fa fa-microchip">&nbsp;32/64/128GB Storage</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-xs-3 col-md-3 text-xs-center" id="hits">
+                            <span class="fa fa-bar-chart">&nbsp;24%</span>
+                            <p>22,010,155 HITS</p>
+                        </div>
+                        <div class="col-xs-3 col-md-3 text-xs-center" id="fan">
+                            <a href="#"><span class="fa fa-heart">&nbsp;1904</span></a>
+                            <p>BECOME A FAN</p>
+                        </div>-->
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 col-md-3 pb-product-details-fa">
+                            <span class="fa fa- fa-lg"></span>
+                            <h3><strong>{{product.price}}</strong></h3>
+      
+                        </div>
+                        <!--
+                        <div class="col-xs-3 col-md-3 pb-product-details-fa">
+                            <span class="fa fa-mobile fa-lg"></span>
+                            <h3><strong>5.5"</strong></h3>
+                            <p>1440x2560 pixels</p>
+                        </div>
+                        <div class="col-xs-3 col-md-3 pb-product-details-fa">
+                            <span class="fa fa-camera fa-lg"></span>
+                            <h3><strong>12 MP</strong></h3>
+                            <p>2160p</p>
+                        </div>
+                        <div class="col-xs-3 col-md-3 pb-product-details-fa">
+                            <span class="fa fa-microchip fa-lg"></span>
+                            <h3><strong>4GB RAM</strong></h3>
+                            <p>Exynos 8890</p>
+                        </div>
+                        <div class="col-xs-3 col-md-3 pb-product-details-fa">
+                            <span class="fa fa-battery-4 fa-lg"></span>
+                            <h3><strong>3600mAH</strong></h3>
+                            <p>Li-ion</p>
+                        </div>
+                    -->
+                    </div>
+                </div>
+            </div>
+          <!--Start Item Details Table area-->
+            <div class="row">
+                <div class="tabs_div">
+                    <ul>
+                        <li>Product Information</li>
+                        <li>Additional Data 1</li>
+                    </ul>
+                    <div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="success">Id: </td>
+                                    <td>{{product.id}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="success">Title: </td>
+                                    <td> {{product.title}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="success">Price: </td>
+                                    <td>{{product.price}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="success">Image Source: </td>
+                                    <td><a href="{{product.link}}">{{product.link}} </a> </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="success">Addional Prop 1: </td>
+                                    <td>value1</td>
+                                </tr>
+                                <tr>
+                                    <td class="success">Addional Prop 2: </td>
+                                    <td>val 2</td>
+                            </tbody>
+                        </table>
+                    </div>
+  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- you need to include the shieldui css and js assets in order for the charts to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-glow/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $(".tabs_div").shieldTabs();
+    });
+</script>
+
+<style>
+    .pb-product-details-ul {
+        list-style-type: none;
+        padding-left: 0;
+        color: black;
+    }
+
+        .pb-product-details-ul > li {
+            padding-bottom: 5px;
+            font-size: 15px;
+        }
+
+    #gradient {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feffff+0,ddf1f9+31,a0d8ef+62 */
+        background: #feffff; /* Old browsers */
+        background: -moz-linear-gradient(left, #feffff 0%, #ddf1f9 31%, #a0d8ef 62%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #feffff 0%,#ddf1f9 31%,#a0d8ef 62%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #feffff 0%,#ddf1f9 31%,#a0d8ef 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=1 ); /* IE6-9 */
+        border: 1px solid #f2f2f2;
+        padding: 20px;
+    }
+
+    #hits {
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        vertical-align: middle;
+        padding-top: 15px;
+        font-size: 17px;
+        color: white;
+    }
+
+    #fan {
+        vertical-align: middle;
+        padding-top: 15px;
+        font-size: 17px;
+        color: white;
+    }
+
+    .pb-product-details-fa > span {
+        padding-top: 20px;
+    }
+</style>
+  
+    <!-- Footer -->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="#">About</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Contact</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2020. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fab fa-facebook fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-instagram fa-2x fa-fw"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  
+  </body>
+  
+  </html>
+  
