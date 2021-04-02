@@ -3,7 +3,7 @@
 #https://miro.medium.com/max/601/1*O_PEPxbh_9OqdkMtOU4jkA.png böyle bişe yap
 from Scraper import Scraper
 import initDb
-import db
+import db 
 
 print("sea")
 
