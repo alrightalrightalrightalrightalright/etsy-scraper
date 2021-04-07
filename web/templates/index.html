@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Landing Page - Start Bootstrap Theme</title>
+  <title>Etsy Scraper - Scrape With Ease</title>
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   
@@ -25,9 +25,8 @@
 </head>
 
 <body>
-<p>{{name }}</p>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Etsy Scraper</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -60,10 +59,10 @@
           <h1 class="mb-5">Scrape an Etsy product by entering the URL here: </h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form action = "/scrape" method = "post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Etsy Product URL">
+                <input type="text" name = "product-url" class="form-control form-control-lg" placeholder="Etsy Product URL">
               </div>
               <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn-primary">Scrape</button>
@@ -72,7 +71,7 @@
           </form>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <h3 class="lead mb-0 text-white">or see all the scraped products <a href="#">here</a></h3>
+          <h3 class="lead mb-0 text-white">or see all the scraped products <a href="/products">here</a></h3>
         </div>
       </div>
     </div>

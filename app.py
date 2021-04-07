@@ -1,4 +1,3 @@
-from markupsafe import escape
 from flask import Flask, url_for, redirect
 from flask import render_template
 import logging
@@ -33,10 +32,11 @@ def getProduct(product_id):
 
 PRODUCTS_PER_PAGE=50
 #TODO: cache and use repo pattern
-#https://betterprogramming.pub/simple-flask-pagination-example-4190b12c2e2e
+#TODO: pagination
 @app.route('/products')
 def getAllProducts():
     products= db.getAllProducts()
     print(products)
     return render_template('products.html',products=products)
 
+#TODO: 404, 500 pages

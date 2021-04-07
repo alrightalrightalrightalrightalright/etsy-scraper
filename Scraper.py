@@ -4,17 +4,8 @@ import re
 import db
 import psycopg2
 import Product
-"""proxies={
-    18.133.228.20:80
-138.68.176.163:3128
-81.134.57.82:3128
-68.183.252.171:3128
-193.36.33.3:8080
-138.68.141.150:8080
-178.62.95.218:8080
-94.177.255.108:3128
-}
-"""
+
+
 proxies = {
     'http': 'http://178.62.95.218:8080',
     'https': 'https://178.62.95.218:8080',
@@ -41,7 +32,9 @@ class Scraper:
 
     def __init__(self):
         self._session.headers=self._headers
-        self._session.proxies= proxies
+        #use GB proxies in order to get price currency right
+        # or run app in GB.
+        #self._session.proxies= proxies
 
         r= self._session.get(self._baseUrl) 
         print( 'initial get: ', r.status_code)
